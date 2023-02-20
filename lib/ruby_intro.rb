@@ -4,6 +4,7 @@
 
 def sum arr
   # YOUR CODE HERE
+  
   return arr.sum
 end
 
@@ -15,7 +16,7 @@ end
 def sum_to_n? arr, n
   # YOUR CODE HERE
   tOrF = false
-  arr.combinations(2).to_a.each{|i|
+  arr.combination(2).to_a.each{|i|
     (i.sum == n) ? tOrF = true : next}
   return tOrF
 end
@@ -30,13 +31,19 @@ end
 def starts_with_consonant? s
   # YOUR CODE HERE
   consonant = false
-  string =~ (/\A[^aeiou]/i) ? consonant = true : consonant = false
+  s =~ (/\A[^#aeiou\d]/i) ? consonant = true : consonant = false
   return consonant
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-
+  isMultiple = false
+  if((s !~ /[^01]/) and (s != ''))
+    (s.to_i(2) % 4 == 0) ? isMultiple = true : isMultiple = false
+  else
+    return false
+  end
+  return isMultiple
 end
 
 # Part 3
