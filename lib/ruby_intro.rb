@@ -53,7 +53,7 @@ def binary_multiple_of_4? s
     #the modulo of 4 to check if it is a multiple of 4
     (s.to_i(2) % 4 == 0) ? true : false
   else
-    return false
+    false
   end
 
 end
